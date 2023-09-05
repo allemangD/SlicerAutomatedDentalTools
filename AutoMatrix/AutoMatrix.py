@@ -15,6 +15,12 @@ from qt import QFileDialog,QMessageBox
 from functools import partial
 import SimpleITK as sitk
 
+try:
+    import tqdm
+except ImportError:
+    slicer.util.pip_install('tqdm')
+    import tqdm
+
 from Matrix_CLI.Apply_matrix_utils.GZ_tools import GetPatients
 from Matrix_CLI.Apply_matrix_utils.VTK_tools import GetPatientsVTK
 
